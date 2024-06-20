@@ -34,7 +34,6 @@ export default function Home() {
               </li>
             ))}
           </div>
-          
         </div>
       </div>
     </div>
