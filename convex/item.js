@@ -1,5 +1,5 @@
 import { v } from "convex/values"
-import { mutation } from "./_generated/server"
+import { mutation, query } from "./_generated/server"
 
 export const store = mutation({
     args: {
@@ -11,5 +11,13 @@ export const store = mutation({
         })
 
         return newItem
+    }
+})
+
+export const items = query({
+    handler: async (ctx) => {
+        const allItems = await ctx.db.query("items").collect()
+        console.log(allItems)
+        return allItems
     }
 })
