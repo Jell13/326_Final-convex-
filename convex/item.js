@@ -17,7 +17,6 @@ export const store = mutation({
 export const items = query({
     handler: async (ctx) => {
         const allItems = await ctx.db.query("items").collect()
-        console.log(allItems)
         return allItems
     }
 })

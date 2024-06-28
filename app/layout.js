@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "@/providers/ConvexClientProvider";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Head } from 'next/head'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head></Head>
       <body className={inter.className}>
         <ConvexClientProvider>
           {children}
